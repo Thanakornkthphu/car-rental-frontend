@@ -29,6 +29,7 @@
   --color-brand-foreground: var(--brand-foreground);
   --color-muted-foreground: var(--muted-foreground);
   --radius-card: 1rem;
+  --container-wide: 1400px;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

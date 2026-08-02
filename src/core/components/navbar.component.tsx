@@ -47,7 +47,7 @@ function NavLinks({ user, idPrefix }: { user: User | null; idPrefix: string }) {
 export function Navbar({ user, onLogout }: NavbarProps) {
   return (
     <header className="sticky top-0 z-10 border-b border-border bg-background/95 backdrop-blur">
-      <Container className="relative flex h-16 items-center justify-between">
+      <Container size="wide" className="relative flex h-16 items-center justify-between min-[1410px]:!px-0">
         <Link href="/" data-testid="nav-home-link" className="text-lg font-semibold text-foreground">
           WheelUp
         </Link>

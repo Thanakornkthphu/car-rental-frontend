@@ -55,36 +55,49 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col">
-      <section className="py-16 sm:py-24">
-        <Container className="flex flex-col items-center gap-6 text-center">
-          <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            Rent the right car for every trip
-          </h1>
-          <p className="max-w-xl text-muted-foreground">
-            Compare prices, specs, and availability across our fleet — then book in minutes.
-          </p>
-          <div className="flex gap-3">
-            <Link href="/cars" data-testid="hero-browse-cars-link" className={buttonVariants("primary", "lg")}>
-              Browse Cars
-            </Link>
-            <Link href="#how-it-works" data-testid="hero-how-it-works-link" className={buttonVariants("outline", "lg")}>
-              How it works
-            </Link>
-          </div>
-        </Container>
+      <section className="pb-16 sm:pb-24">
+        <div className="relative mx-auto w-full max-w-wide overflow-hidden">
+          <Image
+            src="https://loremflickr.com/1600/700/car,road?lock=401"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            unoptimized
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
+          <Container className="relative flex flex-col items-center gap-6 py-24 text-center sm:py-50">
+            <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Rent the right car for every trip
+            </h1>
+            <p className="max-w-xl text-white/80">
+              Compare prices, specs, and availability across our fleet — then book in minutes.
+            </p>
+            <div className="flex gap-3">
+              <Link href="/cars" data-testid="hero-browse-cars-link" className={buttonVariants("primary", "lg")}>
+                Browse Cars
+              </Link>
+              <Link
+                href="#how-it-works"
+                data-testid="hero-how-it-works-link"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-card border border-white/40 px-6 text-base font-medium text-white transition-colors hover:bg-white/10"
+              >
+                How it works
+              </Link>
+            </div>
+          </Container>
+        </div>
       </section>
 
-      <section className="py-16 sm:py-24">
-        <Container className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-          {VALUE_PROPS.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="flex flex-col items-center gap-2 text-center">
-              <Icon className="size-8 text-brand" aria-hidden="true" />
-              <p className="font-medium text-foreground">{title}</p>
-              <p className="text-sm text-muted-foreground">{description}</p>
-            </div>
-          ))}
-        </Container>
-      </section>
+      <Container className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+        {VALUE_PROPS.map(({ icon: Icon, title, description }) => (
+          <div key={title} className="flex flex-col items-center gap-2 text-center">
+            <Icon className="size-8 text-brand" aria-hidden="true" />
+            <p className="font-medium text-foreground">{title}</p>
+            <p className="text-sm text-muted-foreground">{description}</p>
+          </div>
+        ))}
+      </Container>
 
       <section className="py-16 sm:py-24">
         <Container className="flex flex-col gap-6">
