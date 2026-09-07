@@ -28,21 +28,33 @@ function revalidateCarPaths() {
 export async function createCarAction(input: CarFormInput): Promise<ActionResult> {
   const error = validateCarInput(input);
   if (error) return { success: false, error };
-  await createCar(input);
-  revalidateCarPaths();
-  return { success: true };
+  try {
+    await createCar(input);
+    revalidateCarPaths();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : "Unable to create car." };
+  }
 }
 
 export async function updateCarAction(id: string, input: CarFormInput): Promise<ActionResult> {
   const error = validateCarInput(input);
   if (error) return { success: false, error };
-  await updateCar(id, input);
-  revalidateCarPaths();
-  return { success: true };
+  try {
+    await updateCar(id, input);
+    revalidateCarPaths();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : "Unable to update car." };
+  }
 }
 
 export async function deleteCarAction(id: string): Promise<ActionResult> {
-  await deleteCar(id);
-  revalidateCarPaths();
-  return { success: true };
+  try {
+    await deleteCar(id);
+    revalidateCarPaths();
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : "Unable to delete car." };
+  }
 }

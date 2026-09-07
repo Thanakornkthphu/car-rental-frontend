@@ -1,0 +1,452 @@
+{
+  "/Users/mackay/Desktop/car-rental-frontend/postcss.config.mjs": {
+    "mtime": 1784382579.6924593,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/next-env.d.ts": {
+    "mtime": 1785743974.4969008,
+    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
+    "semantic_hash": "d0f8375ae1199dc7acd3977fc33b78b8"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/package.json": {
+    "mtime": 1785743976.1860583,
+    "ast_hash": "75ace4fcc3f96bff6f13c30d5420e532",
+    "semantic_hash": "75ace4fcc3f96bff6f13c30d5420e532"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/tsconfig.json": {
+    "mtime": 1784382579.6941094,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/eslint.config.mjs": {
+    "mtime": 1784382579.6921785,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/next.config.ts": {
+    "mtime": 1785743976.1823523,
+    "ast_hash": "e7a0fe60e6440e912f9ddad789b68e65",
+    "semantic_hash": "e7a0fe60e6440e912f9ddad789b68e65"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/.claude/settings.local.json": {
+    "mtime": 1785688267.8004684,
+    "ast_hash": "3c55928b2a0953faae8321123db3b200",
+    "semantic_hash": "3c55928b2a0953faae8321123db3b200"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/types/car.type.ts": {
+    "mtime": 1785743976.2164176,
+    "ast_hash": "e50ac766ddcdc2da9f84a85c0bcd06ac",
+    "semantic_hash": "e50ac766ddcdc2da9f84a85c0bcd06ac"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/types/booking.type.ts": {
+    "mtime": 1785743976.216063,
+    "ast_hash": "ed3a0f57fdd29e1bc4a1d4cac90ac72b",
+    "semantic_hash": "ed3a0f57fdd29e1bc4a1d4cac90ac72b"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/types/user.type.ts": {
+    "mtime": 1785743976.217217,
+    "ast_hash": "dc453dbc743fce9631685d70d7748dbd",
+    "semantic_hash": "dc453dbc743fce9631685d70d7748dbd"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/types/pagination.type.ts": {
+    "mtime": 1785743976.216977,
+    "ast_hash": "f142d55ce87566bb5558a261c4ae7a30",
+    "semantic_hash": "f142d55ce87566bb5558a261c4ae7a30"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/utils/format.util.ts": {
+    "mtime": 1785743976.2184305,
+    "ast_hash": "ad31119b3cb40c367f716ab81c42f7d3",
+    "semantic_hash": "ad31119b3cb40c367f716ab81c42f7d3"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/utils/validation.util.ts": {
+    "mtime": 1785743976.2189705,
+    "ast_hash": "b7ec993d0aea947299813ae81f28fd28",
+    "semantic_hash": "b7ec993d0aea947299813ae81f28fd28"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/utils/cn.util.ts": {
+    "mtime": 1785743976.2177215,
+    "ast_hash": "8134cafc893e5b2c7c4864806bd5d824",
+    "semantic_hash": "8134cafc893e5b2c7c4864806bd5d824"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/card.component.tsx": {
+    "mtime": 1785743976.206844,
+    "ast_hash": "4ec706ea6b7318a7b8b253bd839b9851",
+    "semantic_hash": "4ec706ea6b7318a7b8b253bd839b9851"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/select.component.tsx": {
+    "mtime": 1785743976.2138512,
+    "ast_hash": "b69641110ce8f580d26aabb89b12f2d7",
+    "semantic_hash": "b69641110ce8f580d26aabb89b12f2d7"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/button.component.tsx": {
+    "mtime": 1785743976.2062204,
+    "ast_hash": "a8b3b80323d90886da5fb97cd7d9cfa2",
+    "semantic_hash": "a8b3b80323d90886da5fb97cd7d9cfa2"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/modal.component.tsx": {
+    "mtime": 1785743976.2122865,
+    "ast_hash": "fbd2b0cfef7476f36cf6c990a2a0bc1c",
+    "semantic_hash": "fbd2b0cfef7476f36cf6c990a2a0bc1c"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/empty-state.component.tsx": {
+    "mtime": 1785743976.2095363,
+    "ast_hash": "12862cf53d7d06c631263ac1e7e0e29a",
+    "semantic_hash": "12862cf53d7d06c631263ac1e7e0e29a"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/navbar.component.tsx": {
+    "mtime": 1785743976.212822,
+    "ast_hash": "a217e7ee82a84a7e8371a3aa4962898c",
+    "semantic_hash": "a217e7ee82a84a7e8371a3aa4962898c"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/container.component.tsx": {
+    "mtime": 1785743976.2081358,
+    "ast_hash": "6c23f4de50d9c6d7b4175e874daa89fc",
+    "semantic_hash": "6c23f4de50d9c6d7b4175e874daa89fc"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/pagination.component.tsx": {
+    "mtime": 1785743976.213449,
+    "ast_hash": "7bb2cdf90a8788ed9ed7dcaea79c5fbf",
+    "semantic_hash": "7bb2cdf90a8788ed9ed7dcaea79c5fbf"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/skeleton.component.tsx": {
+    "mtime": 1785743976.2145896,
+    "ast_hash": "6364455aafe363d7a996eca5d4e3f636",
+    "semantic_hash": "6364455aafe363d7a996eca5d4e3f636"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/confirm-dialog.component.tsx": {
+    "mtime": 1785743976.2074232,
+    "ast_hash": "228f04e586f68a61424f018050e52e57",
+    "semantic_hash": "228f04e586f68a61424f018050e52e57"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/footer.component.tsx": {
+    "mtime": 1785743976.2103148,
+    "ast_hash": "a5d9068850a8392869779485d9d3408c",
+    "semantic_hash": "a5d9068850a8392869779485d9d3408c"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/badge.component.tsx": {
+    "mtime": 1785743976.2056499,
+    "ast_hash": "3f6da4c3e9a9073fa664fa1e816d8bd9",
+    "semantic_hash": "3f6da4c3e9a9073fa664fa1e816d8bd9"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/theme-toggle.component.tsx": {
+    "mtime": 1785743976.2148132,
+    "ast_hash": "b264d2b7a938a23a46aa6114b94428bf",
+    "semantic_hash": "b264d2b7a938a23a46aa6114b94428bf"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/input.component.tsx": {
+    "mtime": 1785743976.2109442,
+    "ast_hash": "8a6b7363f423d78634e69e47c1bccfc7",
+    "semantic_hash": "8a6b7363f423d78634e69e47c1bccfc7"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/core/components/mobile-nav-toggle.component.tsx": {
+    "mtime": 1785743976.211671,
+    "ast_hash": "8311923e55eb2d6186b0766fb602f977",
+    "semantic_hash": "8311923e55eb2d6186b0766fb602f977"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/layout.tsx": {
+    "mtime": 1785743976.2046545,
+    "ast_hash": "d0be758ddf05c0066bcb68111e554d1a",
+    "semantic_hash": "d0be758ddf05c0066bcb68111e554d1a"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/error.tsx": {
+    "mtime": 1785743976.203607,
+    "ast_hash": "edb79bebfc0c6e89295b9f28e170568f",
+    "semantic_hash": "edb79bebfc0c6e89295b9f28e170568f"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/not-found.tsx": {
+    "mtime": 1785743976.2049026,
+    "ast_hash": "caa10aa6386c1d9eb9e465554489dde5",
+    "semantic_hash": "caa10aa6386c1d9eb9e465554489dde5"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(marketing)/layout.tsx": {
+    "mtime": 1785743976.202263,
+    "ast_hash": "c31d035d80cd6a92b966ead5f43531a1",
+    "semantic_hash": "c31d035d80cd6a92b966ead5f43531a1"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(marketing)/page.tsx": {
+    "mtime": 1785743976.2032464,
+    "ast_hash": "8f2a01cee06c5e0aca1c8ef96d41e17b",
+    "semantic_hash": "8f2a01cee06c5e0aca1c8ef96d41e17b"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(marketing)/about/page.tsx": {
+    "mtime": 1785743976.19893,
+    "ast_hash": "2a65e17122225c7aae885344b1dc4473",
+    "semantic_hash": "2a65e17122225c7aae885344b1dc4473"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(marketing)/cars/loading.tsx": {
+    "mtime": 1785743976.2004757,
+    "ast_hash": "9ce16a4c8026483b35c0bf193514bafd",
+    "semantic_hash": "9ce16a4c8026483b35c0bf193514bafd"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(marketing)/cars/page.tsx": {
+    "mtime": 1785743976.2018902,
+    "ast_hash": "b3419b7c70c9448037b4576888329b9b",
+    "semantic_hash": "b3419b7c70c9448037b4576888329b9b"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(marketing)/cars/[carId]/loading.tsx": {
+    "mtime": 1785743976.1994116,
+    "ast_hash": "daa24e92bc22976d39d3b111fe180792",
+    "semantic_hash": "daa24e92bc22976d39d3b111fe180792"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(marketing)/cars/[carId]/page.tsx": {
+    "mtime": 1785743976.2001746,
+    "ast_hash": "6c585c1317a63d686ce264f780dd4225",
+    "semantic_hash": "6c585c1317a63d686ce264f780dd4225"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(marketing)/cars/[carId]/not-found.tsx": {
+    "mtime": 1785743976.199834,
+    "ast_hash": "998eea7990c85fb37efceec54087ea6f",
+    "semantic_hash": "998eea7990c85fb37efceec54087ea6f"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(auth)/layout.tsx": {
+    "mtime": 1785743976.1867008,
+    "ast_hash": "568ee2238867a6974690de7100def688",
+    "semantic_hash": "568ee2238867a6974690de7100def688"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(auth)/signup/page.tsx": {
+    "mtime": 1785743976.1875257,
+    "ast_hash": "6492d45c3f5a19dac6e14eb05d1f8c64",
+    "semantic_hash": "6492d45c3f5a19dac6e14eb05d1f8c64"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(auth)/login/page.tsx": {
+    "mtime": 1785743976.187069,
+    "ast_hash": "b478b7fc5ffd9f6c1a181d842bb6d616",
+    "semantic_hash": "b478b7fc5ffd9f6c1a181d842bb6d616"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/layout.tsx": {
+    "mtime": 1785743976.196439,
+    "ast_hash": "c31e32f4a62d175879d32babd6d6d5e0",
+    "semantic_hash": "c31e32f4a62d175879d32babd6d6d5e0"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/bookings/loading.tsx": {
+    "mtime": 1785743976.1900778,
+    "ast_hash": "76fdfebb8bd4f455160681279182567a",
+    "semantic_hash": "76fdfebb8bd4f455160681279182567a"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/bookings/page.tsx": {
+    "mtime": 1785743976.191678,
+    "ast_hash": "f38835f0c9da054973cbd7f2b266fe97",
+    "semantic_hash": "f38835f0c9da054973cbd7f2b266fe97"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/bookings/[bookingId]/loading.tsx": {
+    "mtime": 1785743976.1891828,
+    "ast_hash": "88170c67568d2e5a10ad2e462c520748",
+    "semantic_hash": "88170c67568d2e5a10ad2e462c520748"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/bookings/[bookingId]/page.tsx": {
+    "mtime": 1785743976.1897278,
+    "ast_hash": "a55424676ca72e3da6a5ad9e045b8654",
+    "semantic_hash": "a55424676ca72e3da6a5ad9e045b8654"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/bookings/[bookingId]/not-found.tsx": {
+    "mtime": 1785743976.189384,
+    "ast_hash": "fbb200f5f229fec6e8531f251f707eae",
+    "semantic_hash": "fbb200f5f229fec6e8531f251f707eae"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/bookings/[bookingId]/confirmation/page.tsx": {
+    "mtime": 1785743976.188987,
+    "ast_hash": "5124a411664f4e44381bd2bc5ce0b379",
+    "semantic_hash": "5124a411664f4e44381bd2bc5ce0b379"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/bookings/new/page.tsx": {
+    "mtime": 1785743976.1906672,
+    "ast_hash": "43c023b105c27715cc8a969c2f95e8a4",
+    "semantic_hash": "43c023b105c27715cc8a969c2f95e8a4"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/admin/bookings/page.tsx": {
+    "mtime": 1785743976.1883414,
+    "ast_hash": "1748130ee002bd4b7445ea018ed2029b",
+    "semantic_hash": "1748130ee002bd4b7445ea018ed2029b"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/admin/cars/page.tsx": {
+    "mtime": 1785743976.1885972,
+    "ast_hash": "38bdddb8662c26c14cc1f7c627ba12ba",
+    "semantic_hash": "38bdddb8662c26c14cc1f7c627ba12ba"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/app/(dashboard)/profile/page.tsx": {
+    "mtime": 1785743976.1983583,
+    "ast_hash": "d405784f0cbf826cb1e92809f9f415f3",
+    "semantic_hash": "d405784f0cbf826cb1e92809f9f415f3"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/cancel-booking-button.component.tsx": {
+    "mtime": 1785743976.2227192,
+    "ast_hash": "94fcd55efe6403d320e7a87ace73cf8f",
+    "semantic_hash": "94fcd55efe6403d320e7a87ace73cf8f"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/booking-summary.component.tsx": {
+    "mtime": 1785743976.2218518,
+    "ast_hash": "a45b481afe8c4634741e0a9fd0256df2",
+    "semantic_hash": "a45b481afe8c4634741e0a9fd0256df2"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/payment.mock.ts": {
+    "mtime": 1785743976.222894,
+    "ast_hash": "f941137d8f8fdd9f418794db1efda465",
+    "semantic_hash": "f941137d8f8fdd9f418794db1efda465"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/booking-list-item.component.tsx": {
+    "mtime": 1785743976.2216554,
+    "ast_hash": "b5183c75db77b21d39d72a30af0abe5c",
+    "semantic_hash": "b5183c75db77b21d39d72a30af0abe5c"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/admin-booking-table.component.tsx": {
+    "mtime": 1785743976.2212257,
+    "ast_hash": "19d6d22625e1ecc5201e615f9669656b",
+    "semantic_hash": "19d6d22625e1ecc5201e615f9669656b"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/payment.service.ts": {
+    "mtime": 1785743976.2231803,
+    "ast_hash": "8e44021da89d3fe3250897303f623227",
+    "semantic_hash": "8e44021da89d3fe3250897303f623227"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/booking.action.ts": {
+    "mtime": 1785743976.2220569,
+    "ast_hash": "e2ab7a0ec6467f3e93a44a68e735af61",
+    "semantic_hash": "e2ab7a0ec6467f3e93a44a68e735af61"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/booking.mock.ts": {
+    "mtime": 1785743976.2222753,
+    "ast_hash": "5d49de677cc747efb78920b44f49b69f",
+    "semantic_hash": "5d49de677cc747efb78920b44f49b69f"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/booking.service.ts": {
+    "mtime": 1785743976.2225075,
+    "ast_hash": "47ea7c48a97309725d30a155410a04db",
+    "semantic_hash": "47ea7c48a97309725d30a155410a04db"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/status-pill.component.tsx": {
+    "mtime": 1785743976.2245176,
+    "ast_hash": "70393597585aab5ed30ffc56ae820d6b",
+    "semantic_hash": "70393597585aab5ed30ffc56ae820d6b"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/bookings/booking-form.component.tsx": {
+    "mtime": 1785743976.2214463,
+    "ast_hash": "a6e83d0aa25f843c84f918caa28cc1e7",
+    "semantic_hash": "a6e83d0aa25f843c84f918caa28cc1e7"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/auth/auth.service.ts": {
+    "mtime": 1785743976.2201912,
+    "ast_hash": "6168592f2eacc55ce51da9051901800e",
+    "semantic_hash": "6168592f2eacc55ce51da9051901800e"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/auth/auth.action.ts": {
+    "mtime": 1785743976.2194993,
+    "ast_hash": "b0d3a3828c48f4ae470d9608a20aff04",
+    "semantic_hash": "b0d3a3828c48f4ae470d9608a20aff04"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/auth/login-form.component.tsx": {
+    "mtime": 1785743976.220589,
+    "ast_hash": "a82869416dcf5fae11158f52feb20d13",
+    "semantic_hash": "a82869416dcf5fae11158f52feb20d13"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/auth/auth.mock.ts": {
+    "mtime": 1785743976.2198029,
+    "ast_hash": "6f4703f15b4a450f72fd61d8e45cd985",
+    "semantic_hash": "6f4703f15b4a450f72fd61d8e45cd985"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/auth/signup-form.component.tsx": {
+    "mtime": 1785743976.2208154,
+    "ast_hash": "0f75d137ba89e9d185cdbddbd9afb91e",
+    "semantic_hash": "0f75d137ba89e9d185cdbddbd9afb91e"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/admin-car-form-modal.component.tsx": {
+    "mtime": 1785743976.2261732,
+    "ast_hash": "98e6fb506c26490becf44ef8487fb335",
+    "semantic_hash": "98e6fb506c26490becf44ef8487fb335"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car.service.ts": {
+    "mtime": 1785743976.2305832,
+    "ast_hash": "d200cd8850842b570e27ecb7133a70ab",
+    "semantic_hash": "d200cd8850842b570e27ecb7133a70ab"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car.constant.ts": {
+    "mtime": 1785743976.2294793,
+    "ast_hash": "d57387b3ae686013945435e37da5e3b0",
+    "semantic_hash": "d57387b3ae686013945435e37da5e3b0"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/admin-car-table.component.tsx": {
+    "mtime": 1785743976.22673,
+    "ast_hash": "bbeb9393d6a64e052fb3973896bbf37c",
+    "semantic_hash": "bbeb9393d6a64e052fb3973896bbf37c"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car-grid.component.tsx": {
+    "mtime": 1785743976.227794,
+    "ast_hash": "d277634e85f410b72e9ead32e921780f",
+    "semantic_hash": "d277634e85f410b72e9ead32e921780f"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car-booking-widget.component.tsx": {
+    "mtime": 1785743976.2269833,
+    "ast_hash": "06866e5ac1fc7325c7b2c93db0842a81",
+    "semantic_hash": "06866e5ac1fc7325c7b2c93db0842a81"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car-filters.component.tsx": {
+    "mtime": 1785743976.2275972,
+    "ast_hash": "5b1bed0216feba283127af92fdd753ff",
+    "semantic_hash": "5b1bed0216feba283127af92fdd753ff"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car-specs.component.tsx": {
+    "mtime": 1785743976.2281945,
+    "ast_hash": "de9929a1b2158c10045f54c4e0cb6a74",
+    "semantic_hash": "de9929a1b2158c10045f54c4e0cb6a74"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car.mock.ts": {
+    "mtime": 1785743976.2303379,
+    "ast_hash": "bc1d2326216c594ec3adb8ea0ee47d8a",
+    "semantic_hash": "bc1d2326216c594ec3adb8ea0ee47d8a"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car-card.component.tsx": {
+    "mtime": 1785743976.2274034,
+    "ast_hash": "98d2e3d213c879b7412adca60298ae85",
+    "semantic_hash": "98d2e3d213c879b7412adca60298ae85"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car.action.ts": {
+    "mtime": 1785743976.22874,
+    "ast_hash": "e9add1e31e07d9358161ca3a5937e93f",
+    "semantic_hash": "e9add1e31e07d9358161ca3a5937e93f"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/src/features/cars/car-card-skeleton.component.tsx": {
+    "mtime": 1785743976.227191,
+    "ast_hash": "09870c86138db3869563b3cae05bfdb4",
+    "semantic_hash": "09870c86138db3869563b3cae05bfdb4"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/README.md": {
+    "mtime": 1784382579.6920576,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/AGENTS.md": {
+    "mtime": 1784382622.3960497,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": "9e09241799026ac05be315a2f0b50055"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/CLAUDE.md": {
+    "mtime": 1784382622.3961902,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/public/file.svg": {
+    "mtime": 1784382579.6926205,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/public/vercel.svg": {
+    "mtime": 1784382579.6928313,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/public/next.svg": {
+    "mtime": 1784382579.6932216,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/public/globe.svg": {
+    "mtime": 1784382579.6932247,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "/Users/mackay/Desktop/car-rental-frontend/public/window.svg": {
+    "mtime": 1784382579.692925,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  }
+}

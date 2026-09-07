@@ -3,7 +3,6 @@
 import { revalidatePath } from "next/cache";
 import type { BookingStatus } from "@/core/types/booking.type";
 import { isValidDateRange } from "@/core/utils/validation.util";
-import { calculateTotalPrice } from "@/core/utils/format.util";
 import { getCarById } from "@/features/cars/car.service";
 import { createBooking, deleteBooking, getBookingById, updateBookingStatus } from "@/features/bookings/booking.service";
 import { recordPayment } from "@/features/bookings/payment.service";
@@ -43,28 +42,29 @@ export async function createBookingAction(params: CreateBookingParams): Promise<
     return { success: false, error: "Please check your payment details." };
   }
 
-  const totalPrice = calculateTotalPrice(car.pricePerDay, params.startDate, params.endDate);
-  const booking = await createBooking({
-    car: params.carId,
-    startDate: params.startDate,
-    endDate: params.endDate,
-    totalPrice,
-    userId: user._id,
-  });
-  await recordPayment(
-    {
-      bookingId: booking._id,
-      cardNumber: params.cardNumber,
-      cardHolder: params.cardHolder,
-      expiryMonth: params.expiryMonth,
-      expiryYear: params.expiryYear,
-      cvv: params.cvv,
-    },
-    totalPrice
-  );
+  try {
+    const booking = await createBooking({
+      car: params.carId,
+      startDate: params.startDate,
+      endDate: params.endDate,
+    });
+    const payment = await recordPayment(
+      {
+        bookingId: booking._id,
+        cardNumber: rawCardNumber,
+        cardHolder: params.cardHolder,
+        expiryMonth: params.expiryMonth,
+        expiryYear: params.expiryYear,
+        cvv: params.cvv,
+      }
+    );
+    if (payment.status === "failed") return { success: false, error: "Payment was declined." };
 
-  revalidateBookingPaths();
-  return { success: true, data: { bookingId: booking._id } };
+    revalidateBookingPaths();
+    return { success: true, data: { bookingId: booking._id } };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : "Unable to create booking." };
+  }
 }
 
 export async function cancelBookingAction(bookingId: string): Promise<ActionResult> {
@@ -78,25 +78,37 @@ export async function cancelBookingAction(bookingId: string): Promise<ActionResu
     return { success: false, error: "This booking can no longer be cancelled." };
   }
 
-  await updateBookingStatus(bookingId, "cancelled");
-  revalidateBookingPaths();
-  return { success: true, data: undefined };
+  try {
+    await deleteBooking(bookingId);
+    revalidateBookingPaths();
+    return { success: true, data: undefined };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : "Unable to cancel booking." };
+  }
 }
 
 export async function updateBookingStatusAction(bookingId: string, status: BookingStatus): Promise<ActionResult> {
   const user = await getCurrentUser();
   if (!user?.isAdmin) return { success: false, error: "Not authorized." };
 
-  await updateBookingStatus(bookingId, status);
-  revalidateBookingPaths();
-  return { success: true, data: undefined };
+  try {
+    await updateBookingStatus(bookingId, status);
+    revalidateBookingPaths();
+    return { success: true, data: undefined };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : "Unable to update booking." };
+  }
 }
 
 export async function deleteBookingAction(bookingId: string): Promise<ActionResult> {
   const user = await getCurrentUser();
   if (!user?.isAdmin) return { success: false, error: "Not authorized." };
 
-  await deleteBooking(bookingId);
-  revalidateBookingPaths();
-  return { success: true, data: undefined };
+  try {
+    await deleteBooking(bookingId);
+    revalidateBookingPaths();
+    return { success: true, data: undefined };
+  } catch (error) {
+    return { success: false, error: error instanceof Error ? error.message : "Unable to cancel booking." };
+  }
 }

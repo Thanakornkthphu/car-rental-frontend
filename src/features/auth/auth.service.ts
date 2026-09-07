@@ -1,57 +1,67 @@
 import { cookies } from "next/headers";
+import { ACCESS_TOKEN_COOKIE_NAME, apiFetch } from "@/core/services/api.service";
 import type { LoginInput, SignupInput, User } from "@/core/types/user.type";
-import { MOCK_USERS, SESSION_COOKIE_NAME } from "@/features/auth/auth.mock";
 
-function toPublicUser(record: (typeof MOCK_USERS)[number]): User {
-  return { _id: record._id, name: record.name, email: record.email, isAdmin: record.isAdmin, createdAt: record.createdAt };
+interface ApiUser {
+  _id?: string;
+  id?: string;
+  name: string;
+  email: string;
+  role: "admin" | "user";
+  createdAt?: string;
 }
 
-export async function findUserByCredentials(input: LoginInput): Promise<User | null> {
-  const record = MOCK_USERS.find((user) => user.email === input.email && user.password === input.password);
-  return record ? toPublicUser(record) : null;
+interface LoginResponse {
+  accessToken: string;
+  user: ApiUser;
 }
 
-export async function findUserByEmail(email: string): Promise<User | null> {
-  const record = MOCK_USERS.find((user) => user.email === email);
-  return record ? toPublicUser(record) : null;
-}
-
-export async function createUser(input: SignupInput): Promise<User> {
-  const record = {
-    _id: crypto.randomUUID(),
-    name: input.name,
-    email: input.email,
-    password: input.password,
-    isAdmin: false,
-    createdAt: new Date().toISOString(),
+function toUser(user: ApiUser): User {
+  return {
+    _id: user._id ?? user.id ?? "",
+    name: user.name,
+    email: user.email,
+    isAdmin: user.role === "admin",
+    createdAt: user.createdAt ?? "",
   };
-  MOCK_USERS.push(record);
-  return toPublicUser(record);
+}
+
+export async function login(input: LoginInput): Promise<{ accessToken: string; user: User }> {
+  const response = await apiFetch<LoginResponse>("/auth/login", { method: "POST", body: JSON.stringify(input) });
+  return { accessToken: response.accessToken, user: toUser(response.user) };
+}
+
+export async function signup(input: SignupInput): Promise<void> {
+  await apiFetch("/auth/signup", { method: "POST", body: JSON.stringify(input) });
 }
 
 export async function getUserById(id: string): Promise<User | null> {
-  const record = MOCK_USERS.find((user) => user._id === id);
-  return record ? toPublicUser(record) : null;
+  const users = await apiFetch<ApiUser[]>("/user/allUsers");
+  const user = users.find((item) => (item._id ?? item.id) === id);
+  return user ? toUser(user) : null;
 }
 
 export async function getCurrentUser(): Promise<User | null> {
-  const cookieStore = await cookies();
-  const userId = cookieStore.get(SESSION_COOKIE_NAME)?.value;
-  if (!userId) return null;
-  return getUserById(userId);
+  const token = (await cookies()).get(ACCESS_TOKEN_COOKIE_NAME)?.value;
+  if (!token) return null;
+
+  try {
+    return toUser(await apiFetch<ApiUser>("/user/profile/me"));
+  } catch {
+    return null;
+  }
 }
 
-export async function createSession(userId: string): Promise<void> {
-  const cookieStore = await cookies();
-  cookieStore.set(SESSION_COOKIE_NAME, userId, {
+export async function createSession(accessToken: string): Promise<void> {
+  (await cookies()).set(ACCESS_TOKEN_COOKIE_NAME, accessToken, {
     httpOnly: true,
     sameSite: "lax",
-    maxAge: 60 * 60 * 24 * 7,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 60 * 60,
     path: "/",
   });
 }
 
 export async function clearSession(): Promise<void> {
-  const cookieStore = await cookies();
-  cookieStore.delete(SESSION_COOKIE_NAME);
+  (await cookies()).delete(ACCESS_TOKEN_COOKIE_NAME);
 }

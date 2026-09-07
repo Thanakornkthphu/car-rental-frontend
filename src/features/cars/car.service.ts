@@ -1,5 +1,41 @@
+import { apiFetch } from "@/core/services/api.service";
 import type { Car, CarFormInput, CarSearchParams } from "@/core/types/car.type";
-import { MOCK_CARS } from "@/features/cars/car.mock";
+
+interface ApiCar {
+  _id: string;
+  brand: string;
+  model: string;
+  year: number;
+  licensePlate?: string;
+  pricePerDay: number;
+  color?: string;
+  seats?: number;
+  transmission?: Car["transmission"];
+  fuelType?: Car["fuelType"];
+  image?: string;
+  status?: "available" | "coming_soon";
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+function toCar(car: ApiCar): Car {
+  return {
+    _id: car._id,
+    brand: car.brand,
+    model: car.model,
+    year: car.year,
+    licensePlate: car.licensePlate ?? "",
+    pricePerDay: car.pricePerDay,
+    color: car.color ?? "",
+    seats: car.seats ?? 4,
+    transmission: car.transmission ?? "auto",
+    fuelType: car.fuelType ?? "petrol",
+    image: car.image ?? null,
+    available: car.status !== "coming_soon",
+    createdAt: car.createdAt ?? "",
+    updatedAt: car.updatedAt ?? "",
+  };
+}
 
 function matchesFilters(car: Car, filters: CarSearchParams): boolean {
   if (filters.brand && car.brand !== filters.brand) return false;
@@ -11,38 +47,37 @@ function matchesFilters(car: Car, filters: CarSearchParams): boolean {
   return true;
 }
 
+function toApiInput(input: CarFormInput) {
+  return { ...input, status: input.available ? "available" : "coming_soon" };
+}
+
 export async function getCars(filters: CarSearchParams = {}): Promise<Car[]> {
-  const filtered = MOCK_CARS.filter((car) => matchesFilters(car, filters));
-  if (filters.sort === "price-asc") return filtered.toSorted((a, b) => a.pricePerDay - b.pricePerDay);
-  if (filters.sort === "price-desc") return filtered.toSorted((a, b) => b.pricePerDay - a.pricePerDay);
-  return filtered;
+  const cars = (await apiFetch<ApiCar[]>("/cars")).map(toCar).filter((car) => matchesFilters(car, filters));
+  if (filters.sort === "price-asc") return cars.toSorted((a, b) => a.pricePerDay - b.pricePerDay);
+  if (filters.sort === "price-desc") return cars.toSorted((a, b) => b.pricePerDay - a.pricePerDay);
+  return cars;
 }
 
 export async function getCarById(id: string): Promise<Car | null> {
-  return MOCK_CARS.find((car) => car._id === id) ?? null;
+  try {
+    return toCar(await apiFetch<ApiCar>(`/cars/${id}`));
+  } catch {
+    return null;
+  }
 }
 
 export async function getCarBrands(): Promise<string[]> {
-  return [...new Set(MOCK_CARS.map((car) => car.brand))].sort();
+  return [...new Set((await getCars()).map((car) => car.brand))].sort();
 }
 
 export async function createCar(input: CarFormInput): Promise<Car> {
-  const now = new Date().toISOString();
-  const car: Car = { _id: crypto.randomUUID(), createdAt: now, updatedAt: now, ...input, image: input.image ?? null };
-  MOCK_CARS.unshift(car);
-  return car;
+  return toCar(await apiFetch<ApiCar>("/cars", { method: "POST", body: JSON.stringify(toApiInput(input)) }));
 }
 
 export async function updateCar(id: string, input: CarFormInput): Promise<Car> {
-  const index = MOCK_CARS.findIndex((car) => car._id === id);
-  if (index === -1) throw new Error("Car not found");
-  const updated: Car = { ...MOCK_CARS[index], ...input, updatedAt: new Date().toISOString() };
-  MOCK_CARS[index] = updated;
-  return updated;
+  return toCar(await apiFetch<ApiCar>(`/cars/${id}`, { method: "PATCH", body: JSON.stringify(toApiInput(input)) }));
 }
 
 export async function deleteCar(id: string): Promise<void> {
-  const index = MOCK_CARS.findIndex((car) => car._id === id);
-  if (index === -1) throw new Error("Car not found");
-  MOCK_CARS.splice(index, 1);
+  await apiFetch(`/cars/${id}`, { method: "DELETE" });
 }
