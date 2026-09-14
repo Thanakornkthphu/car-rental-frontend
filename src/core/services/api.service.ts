@@ -22,7 +22,13 @@ export async function apiFetch<T>(path: string, init: RequestInit = {}): Promise
     },
   });
 
-  if (response.ok) return response.json() as Promise<T>;
+  if (response.ok) {
+    const data = (await response.json()) as T;
+    if (process.env.NODE_ENV === "development") {
+      console.log("API response", { path, status: response.status, data });
+    }
+    return data;
+  }
 
   const body = (await response.json().catch(() => ({}))) as ApiErrorBody;
   throw new Error(Array.isArray(body.message) ? body.message.join(", ") : body.message || "Request failed.");

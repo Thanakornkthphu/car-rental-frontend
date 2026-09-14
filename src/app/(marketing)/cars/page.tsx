@@ -1,8 +1,7 @@
 import type { CarSearchParams, Transmission, FuelType } from "@/core/types/car.type";
 import { Container } from "@/core/components/container.component";
 import { CarFilters } from "@/features/cars/car-filters.component";
-import { CarGrid } from "@/features/cars/car-grid.component";
-import { getCars } from "@/features/cars/car.service";
+import { CarQueryGrid } from "@/features/cars/car-query-grid.component";
 
 interface CarsPageProps {
   searchParams: Promise<{
@@ -26,14 +25,12 @@ export default async function CarsPage({ searchParams }: CarsPageProps) {
     sort: params.sort === "price-asc" || params.sort === "price-desc" ? params.sort : undefined,
   };
 
-  const cars = await getCars(filters);
-
   return (
     <Container className="flex flex-col gap-8 py-12">
       <h1 className="text-2xl font-semibold text-foreground">Browse Cars</h1>
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
         <CarFilters filters={filters} />
-        <CarGrid cars={cars} />
+        <CarQueryGrid filters={filters} />
       </div>
     </Container>
   );

@@ -1,33 +1,17 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
-
-type Theme = "light" | "dark";
-
-const listeners = new Set<() => void>();
-
-function subscribe(callback: () => void) {
-  listeners.add(callback);
-  return () => listeners.delete(callback);
-}
-
-function getSnapshot(): Theme {
-  return (document.documentElement.getAttribute("data-theme") as Theme) ?? "light";
-}
-
-function getServerSnapshot(): Theme {
-  return "light";
-}
-
-function setTheme(theme: Theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
-  listeners.forEach((listener) => listener());
-}
+import { useThemeStore } from "@/core/stores/theme.store";
 
 export function ThemeToggle() {
-  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const theme = useThemeStore((state) => state.theme);
+  const setTheme = useThemeStore((state) => state.setTheme);
+
+  useEffect(() => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    if (currentTheme === "dark" || currentTheme === "light") useThemeStore.setState({ theme: currentTheme });
+  }, []);
 
   return (
     <button
