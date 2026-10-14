@@ -5,8 +5,7 @@ import { Container } from "@/core/components/container.component";
 import { buttonVariants } from "@/core/components/button.component";
 import { Card } from "@/core/components/card.component";
 import { Badge } from "@/core/components/badge.component";
-import { CarGrid } from "@/features/cars/car-grid.component";
-import { getCars } from "@/features/cars/car.service";
+import { FeaturedCarGrid } from "@/features/cars/featured-car-grid.component";
 
 const VALUE_PROPS = [
   { icon: ShieldCheck, title: "Fully insured", description: "Every rental is covered end to end." },
@@ -49,10 +48,7 @@ const TESTIMONIALS = [
   },
 ];
 
-export default async function HomePage() {
-  const cars = await getCars({ sort: "price-asc" });
-  const featuredCars = cars.filter((car) => car.available).slice(0, 6);
-
+export default function HomePage() {
   return (
     <div className="flex flex-col">
       <section className="pb-16 sm:pb-24">
@@ -107,7 +103,7 @@ export default async function HomePage() {
               View all
             </Link>
           </div>
-          <CarGrid cars={featuredCars} />
+          <FeaturedCarGrid />
         </Container>
       </section>
 

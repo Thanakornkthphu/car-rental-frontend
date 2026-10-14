@@ -27,12 +27,12 @@ function toUser(user: ApiUser): User {
 }
 
 export async function login(input: LoginInput): Promise<{ accessToken: string; user: User }> {
-  const response = await apiFetch<LoginResponse>("/auth/login", { method: "POST", body: JSON.stringify(input) });
+  const response = await apiFetch<LoginResponse>("/auth/login", { method: "POST", data: input });
   return { accessToken: response.accessToken, user: toUser(response.user) };
 }
 
 export async function signup(input: SignupInput): Promise<void> {
-  await apiFetch("/auth/signup", { method: "POST", body: JSON.stringify(input) });
+  await apiFetch("/auth/signup", { method: "POST", data: input });
 }
 
 export async function getUserById(id: string): Promise<User | null> {

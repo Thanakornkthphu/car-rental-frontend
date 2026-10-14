@@ -65,7 +65,7 @@ export async function getBookingById(id: string): Promise<Booking | null> {
 export async function createBooking(input: Pick<CreateBookingInput, "car" | "startDate" | "endDate">): Promise<Booking> {
   const response = await apiFetch<{ booking: ApiBooking }>("/booking", {
     method: "POST",
-    body: JSON.stringify({ car: input.car, startDate: new Date(input.startDate).toISOString(), endDate: new Date(input.endDate).toISOString() }),
+    data: { car: input.car, startDate: new Date(input.startDate).toISOString(), endDate: new Date(input.endDate).toISOString() },
   });
   return toBooking(response.booking);
 }
@@ -73,7 +73,7 @@ export async function createBooking(input: Pick<CreateBookingInput, "car" | "sta
 export async function updateBookingStatus(id: string, status: BookingStatus): Promise<Booking> {
   const response = await apiFetch<{ booking: ApiBooking }>(`/booking/${id}`, {
     method: "PATCH",
-    body: JSON.stringify({ status }),
+    data: { status },
   });
   return toBooking(response.booking);
 }

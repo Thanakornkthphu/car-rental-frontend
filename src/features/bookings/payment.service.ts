@@ -29,7 +29,7 @@ function toPayment(payment: ApiPayment): Payment {
 export async function recordPayment(input: CreatePaymentInput): Promise<Payment> {
   const response = await apiFetch<{ payment: ApiPayment }>("/payment/pay", {
     method: "POST",
-    body: JSON.stringify(input),
+    data: input,
   });
   return toPayment(response.payment);
 }

@@ -23,11 +23,11 @@ export async function getCarBrands(): Promise<string[]> {
 }
 
 export async function createCar(input: CarFormInput): Promise<Car> {
-  return toCar(await apiFetch<ApiCar>("/cars", { method: "POST", body: JSON.stringify(toApiInput(input)) }));
+  return toCar(await apiFetch<ApiCar>("/cars", { method: "POST", data: toApiInput(input) }));
 }
 
 export async function updateCar(id: string, input: CarFormInput): Promise<Car> {
-  return toCar(await apiFetch<ApiCar>(`/cars/${id}`, { method: "PATCH", body: JSON.stringify(toApiInput(input)) }));
+  return toCar(await apiFetch<ApiCar>(`/cars/${id}`, { method: "PATCH", data: toApiInput(input) }));
 }
 
 export async function deleteCar(id: string): Promise<void> {
