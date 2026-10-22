@@ -29,7 +29,7 @@ export function Pagination({ page, totalPages, basePath, searchParams, testId }:
           href={buildHref(basePath, pageNumber, searchParams)}
           data-testid={`${testId}-page-${pageNumber}-link`}
           className={cn(
-            "flex size-9 items-center justify-center rounded-card text-sm",
+            "flex size-9 items-center justify-center rounded-button text-sm",
             pageNumber === page ? "bg-brand text-brand-foreground" : "border border-border text-foreground hover:bg-surface"
           )}
           aria-current={pageNumber === page ? "page" : undefined}

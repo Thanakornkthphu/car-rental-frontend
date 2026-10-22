@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Input } from "@/core/components/input.component";
 import { Button } from "@/core/components/button.component";
 import { loginAction } from "@/features/auth/auth.action";
+import { DEMO_ACCOUNT } from "@/features/auth/auth.constant";
 
 interface LoginFormProps {
   redirectTo: string;
@@ -31,11 +32,12 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} data-testid="login-form" className="flex flex-col gap-4">
+    <form onSubmit={handleSubmit} autoComplete="off" data-testid="login-form" className="flex flex-col gap-4">
       <Input
         label="Email"
         type="email"
         testId="login-email-input"
+        autoComplete="off"
         value={form.email}
         onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
         required
@@ -44,6 +46,7 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
         label="Password"
         type="password"
         testId="login-password-input"
+        autoComplete="off"
         value={form.password}
         onChange={(event) => setForm((prev) => ({ ...prev, password: event.target.value }))}
         required
@@ -57,7 +60,7 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
         Log in
       </Button>
       <p className="text-center text-xs text-muted-foreground">
-        Demo account: guest@example.com / password123
+        {`Demo account: ${DEMO_ACCOUNT}`}
       </p>
     </form>
   );

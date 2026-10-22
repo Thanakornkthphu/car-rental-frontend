@@ -75,7 +75,7 @@ export async function CarFilters({ filters }: CarFiltersProps) {
           <Link
             href="/cars"
             data-testid="car-filter-clear-link"
-            className="flex h-10 items-center justify-center rounded-card border border-border px-4 text-sm font-medium text-foreground hover:bg-background"
+            className="flex h-10 items-center justify-center rounded-button border border-border px-4 text-sm font-medium text-foreground hover:bg-background"
           >
             Clear
           </Link>

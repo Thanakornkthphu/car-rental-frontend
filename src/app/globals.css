@@ -8,6 +8,7 @@
   --brand: #ea580c;
   --brand-foreground: #ffffff;
   --muted-foreground: #6b7280;
+  --magic-card-gradient: #d9d9d955;
 }
 
 [data-theme="dark"] {
@@ -18,6 +19,7 @@
   --brand: #f97316;
   --brand-foreground: #0a0a0a;
   --muted-foreground: #a1a1aa;
+  --magic-card-gradient: #262626;
 }
 
 @theme inline {
@@ -29,12 +31,32 @@
   --color-brand-foreground: var(--brand-foreground);
   --color-muted-foreground: var(--muted-foreground);
   --radius-card: 1rem;
+  --radius-button: 6px;
+  --radius-button-full: 10px;
   --container-wide: 1400px;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@layer base {
+  button,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [role="button"][aria-disabled="true"],
+  input[type="button"]:disabled,
+  input[type="submit"]:disabled,
+  input[type="reset"]:disabled {
+    cursor: not-allowed;
+  }
+}
 
 body {
   background: var(--background);

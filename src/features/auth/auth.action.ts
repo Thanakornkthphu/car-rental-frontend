@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import type { LoginInput, SignupInput } from "@/core/types/user.type";
 import { clearSession, createSession, login, signup } from "@/features/auth/auth.service";
+import { getPasswordError } from "@/features/auth/password.util";
 
 type ActionResult = { success: true } | { success: false; error: string };
 
@@ -17,9 +18,12 @@ export async function loginAction(input: LoginInput): Promise<ActionResult> {
 }
 
 export async function signupAction(input: SignupInput): Promise<ActionResult> {
-  if (!input.name.trim() || !input.email.trim() || input.password.length < 6) {
-    return { success: false, error: "Please fill in every field (password must be at least 6 characters)." };
+  if (!input.name.trim() || !input.email.trim()) {
+    return { success: false, error: "Please enter your name and email." };
   }
+  const passwordError = getPasswordError(input.password);
+  if (passwordError) return { success: false, error: passwordError };
+
   try {
     await signup(input);
     const { accessToken } = await login(input);

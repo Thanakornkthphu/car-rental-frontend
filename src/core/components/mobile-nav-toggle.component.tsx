@@ -18,7 +18,7 @@ export function MobileNavToggle({ children }: MobileNavToggleProps) {
         onClick={() => setOpen((value) => !value)}
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
-        className="flex size-9 items-center justify-center rounded-card text-foreground hover:bg-surface"
+        className="flex size-9 items-center justify-center rounded-button text-foreground hover:bg-surface"
       >
         {open ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
       </button>

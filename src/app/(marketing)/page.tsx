@@ -76,7 +76,7 @@ export default function HomePage() {
               <Link
                 href="#how-it-works"
                 data-testid="hero-how-it-works-link"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-card border border-white/40 px-6 text-base font-medium text-white transition-colors hover:bg-white/10"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-button border border-white/40 px-6 text-base font-medium text-white transition-colors hover:bg-white/10"
               >
                 How it works
               </Link>
@@ -174,7 +174,7 @@ export default function HomePage() {
           <Link
             href="/cars"
             data-testid="cta-browse-cars-link"
-            className="inline-flex h-12 items-center justify-center rounded-card bg-background px-6 text-base font-medium text-brand transition-colors hover:opacity-90"
+            className="inline-flex h-12 items-center justify-center rounded-button bg-background px-6 text-base font-medium text-brand transition-colors hover:opacity-90"
           >
             Browse Cars
           </Link>

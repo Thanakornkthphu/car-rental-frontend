@@ -41,7 +41,7 @@ export default async function MyBookingsPage({ searchParams }: MyBookingsPagePro
             href={tab.value ? `/bookings?status=${tab.value}` : "/bookings"}
             data-testid={`booking-status-tab-${tab.value ?? "all"}-link`}
             className={cn(
-              "rounded-full px-3 py-1.5 text-sm font-medium",
+              "rounded-button px-3 py-1.5 text-sm font-medium",
               status === tab.value ? "bg-brand text-brand-foreground" : "border border-border text-foreground hover:bg-surface"
             )}
           >

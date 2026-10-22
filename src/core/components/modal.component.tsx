@@ -36,7 +36,7 @@ export function Modal({ open, onClose, title, children, testId }: ModalProps) {
           data-testid={`${testId}-close-button`}
           onClick={onClose}
           aria-label="Close dialog"
-          className="rounded-card p-1 text-muted-foreground hover:bg-surface"
+          className="rounded-button p-1 text-muted-foreground hover:bg-surface"
         >
           <X className="size-4" aria-hidden="true" />
         </button>
