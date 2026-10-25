@@ -26,7 +26,7 @@ export function Select({ label, options, testId, id, className, placeholder, hid
           id={selectId}
           data-testid={testId}
           className={cn(
-            "h-10 w-full appearance-none rounded-card border border-border bg-surface px-3 pr-9 text-sm text-foreground outline-none focus:border-brand",
+            "h-10 w-full appearance-none rounded-card border border-border bg-background px-3 pr-9 text-sm text-foreground outline-none focus:border-brand dark:bg-surface",
             className
           )}
           {...rest}

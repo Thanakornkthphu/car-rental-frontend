@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WheelUp — Car Rental",
+  title: "Prompt Drive — Car Rental",
   description: "Browse, book, and manage car rentals. A portfolio project.",
 };
 

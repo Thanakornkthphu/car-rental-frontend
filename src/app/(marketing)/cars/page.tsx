@@ -27,7 +27,7 @@ export default async function CarsPage({ searchParams }: CarsPageProps) {
 
   return (
     <Container className="flex flex-col gap-8 py-12">
-      <h1 className="text-2xl font-semibold text-foreground">Browse Cars</h1>
+      <h1 className="text-2xl font-semibold text-foreground">View all cars</h1>
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
         <CarFilters filters={filters} />
         <CarQueryGrid filters={filters} />

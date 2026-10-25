@@ -9,9 +9,9 @@ export default function AboutPage() {
   return (
     <Container className="flex max-w-2xl flex-col gap-8 py-16">
       <div>
-        <h1 className="text-2xl font-semibold text-foreground">About WheelUp</h1>
+        <h1 className="text-2xl font-semibold text-foreground">About Prompt Drive</h1>
         <p className="mt-2 text-muted-foreground">
-          WheelUp is a portfolio project — a car rental booking experience built to demonstrate frontend
+          Prompt Drive is a portfolio project — a car rental booking experience built to demonstrate frontend
           architecture, shared component design, and modern Next.js patterns. It is not a real rental
           service.
         </p>

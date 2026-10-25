@@ -13,7 +13,7 @@ export default function NotFound() {
           Back to Home
         </Link>
         <Link href="/cars" data-testid="not-found-browse-cars-link" className={buttonVariants("outline", "md")}>
-          Browse Cars
+          View all cars
         </Link>
       </div>
     </Container>

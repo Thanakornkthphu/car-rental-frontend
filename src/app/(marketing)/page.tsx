@@ -30,21 +30,21 @@ const TESTIMONIALS = [
     title: "A Weekend with the Alphard",
     quote:
       "Booking the Alphard for a family trip took less than two minutes. The car was spotless and ready exactly on time.",
-    image: "https://loremflickr.com/640/360/minivan,car?lock=301",
+    image: "/images/customer-stories/alphard-family-weekend.png",
   },
   {
     name: "Ploy W.",
     rating: 5.0,
     title: "One Day, Zero Hassle",
     quote: "I only needed a car for one day — no paperwork hassle, just pick up and go. Smoothest rental I've had.",
-    image: "https://loremflickr.com/640/360/car,keys?lock=302",
+    image: "/images/customer-stories/easy-one-day-pickup.png",
   },
   {
     name: "Nattapong R.",
     rating: 4.9,
     title: "A Smooth Ride in the BYD Atto 3",
     quote: "Rented the BYD Atto 3 for a weekend getaway. Smooth drive, fair price, and booking was painless end to end.",
-    image: "https://loremflickr.com/640/360/electriccar,suv?lock=303",
+    image: "/images/customer-stories/byd-atto-3-getaway.png",
   },
 ];
 
@@ -54,12 +54,12 @@ export default function HomePage() {
       <section className="pb-16 sm:pb-24">
         <div className="relative mx-auto w-full max-w-wide overflow-hidden">
           <Image
-            src="https://loremflickr.com/1600/700/car,road?lock=401"
+            src="/images/banners/home-banner.png"
             alt=""
             fill
-            priority
-            className="object-cover"
-            unoptimized
+            preload
+            sizes="100vw"
+            className="object-cover object-right"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
           <Container className="relative flex flex-col items-center gap-6 py-24 text-center sm:py-50">
@@ -71,7 +71,7 @@ export default function HomePage() {
             </p>
             <div className="flex gap-3">
               <Link href="/cars" data-testid="hero-browse-cars-link" className={buttonVariants("primary", "lg")}>
-                Browse Cars
+                View all cars
               </Link>
               <Link
                 href="#how-it-works"
@@ -98,7 +98,7 @@ export default function HomePage() {
       <section className="py-16 sm:py-24">
         <Container className="flex flex-col gap-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-foreground">Featured cars</h2>
+            <h2 className="text-xl font-semibold text-foreground">Popular cars</h2>
             <Link href="/cars" data-testid="featured-cars-view-all-link" className="text-sm font-medium text-brand hover:underline">
               View all
             </Link>
@@ -133,13 +133,13 @@ export default function HomePage() {
             <h2 className="text-3xl font-semibold tracking-tight text-foreground">
               Trusted by <span className="text-brand">everyday renters</span>
             </h2>
-            <p className="max-w-xl text-muted-foreground">Real trips from people who booked their ride through WheelUp.</p>
+            <p className="max-w-xl text-muted-foreground">Real trips from people who booked their ride through Prompt Drive.</p>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {TESTIMONIALS.map((testimonial) => (
               <Card key={testimonial.name} padding="sm" className="flex flex-col gap-4 border-0">
                 <div className="relative h-40 w-full overflow-hidden rounded-card bg-border/40">
-                  <Image src={testimonial.image} alt="" fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover" unoptimized />
+                  <Image src={testimonial.image} alt="" fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover blur-[0.4px]" />
                 </div>
                 <div className="flex flex-1 flex-col gap-2 px-1">
                   <h3 className="font-semibold text-foreground">{testimonial.title}</h3>
@@ -176,7 +176,7 @@ export default function HomePage() {
             data-testid="cta-browse-cars-link"
             className="inline-flex h-12 items-center justify-center rounded-button bg-background px-6 text-base font-medium text-brand transition-colors hover:opacity-90"
           >
-            Browse Cars
+            View all cars
           </Link>
         </Container>
       </section>

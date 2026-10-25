@@ -49,7 +49,7 @@ export function Navbar({ user, onLogout }: NavbarProps) {
     <header className="sticky top-0 z-10 border-b border-border bg-background/95 backdrop-blur">
       <Container size="wide" className="relative flex h-16 items-center justify-between min-[1410px]:!px-0">
         <Link href="/" data-testid="nav-home-link" className="text-lg font-semibold text-foreground">
-          WheelUp
+          Prompt Drive
         </Link>
         <nav className="hidden items-center gap-6 sm:flex">
           <NavLinks user={user} idPrefix="nav" />
@@ -57,7 +57,7 @@ export function Navbar({ user, onLogout }: NavbarProps) {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           {user ? (
-            <form action={onLogout}>
+            <form action={onLogout} data-testid="nav-logout-form">
               <Button testId="nav-logout-button" variant="ghost" size="sm" type="submit">
                 <LogOut className="size-4" aria-hidden="true" />
                 Logout

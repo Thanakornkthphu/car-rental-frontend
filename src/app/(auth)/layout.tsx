@@ -10,7 +10,7 @@ export default async function AuthLayout({ children }: { children: React.ReactNo
     <>
       <Navbar user={user} onLogout={logoutAction} />
       <div className="flex flex-1 flex-col items-center justify-center gap-8 px-4 py-16">
-        <MagicCard className="w-full max-w-sm [&_input]:bg-white dark:[&_input]:bg-surface">{children}</MagicCard>
+        <MagicCard className="w-full max-w-sm">{children}</MagicCard>
       </div>
     </>
   );

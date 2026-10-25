@@ -55,7 +55,7 @@ export default async function MyBookingsPage({ searchParams }: MyBookingsPagePro
           title="No bookings yet"
           description="Browse the fleet to make your first booking."
           actionHref="/cars"
-          actionLabel="Browse Cars"
+          actionLabel="View all cars"
           testId="my-bookings-empty-state"
         />
       ) : (

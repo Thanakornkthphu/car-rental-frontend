@@ -23,7 +23,7 @@ export function CarCard({ car }: CarCardProps) {
           )}
           {!car.available && (
             <Badge color="neutral" className="absolute right-2 top-2">
-              Unavailable
+              Coming soon
             </Badge>
           )}
         </div>

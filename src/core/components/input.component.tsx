@@ -17,7 +17,7 @@ export function Input({ label, error, testId, id, className, ...rest }: InputPro
         id={inputId}
         data-testid={testId}
         className={cn(
-          "h-10 rounded-button-full border border-border bg-surface px-3 text-sm text-foreground outline-none focus:border-brand",
+          "h-10 rounded-button-full border border-border bg-background px-3 text-sm text-foreground outline-none focus:border-brand dark:bg-surface",
           error && "border-red-500",
           className
         )}
